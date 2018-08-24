@@ -21,10 +21,18 @@ RSpec.describe Study do
           value 3
         end
         leaf 555
+        another_node do
+          subnode do
+            another_value 'str'
+          end
+          another_leaf 'leaf'
+        end
       end
     end
     expect(config.tree.node.value).to eq(3)
     expect(config.tree.leaf).to eq(555)
+    expect(config.tree.another_node.subnode.another_value).to eq('str')
+    expect(config.tree.another_node.another_leaf).to eq('leaf')
   end
 
   it 'return error for empty block' do
