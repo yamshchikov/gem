@@ -1,5 +1,8 @@
 require "study/version"
 
 module Study
-  # Your code goes here...
+  class Config
+    def self.build
+    end
+  end
 end
