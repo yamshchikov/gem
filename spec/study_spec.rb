@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 RSpec.describe Study do
   it 'receives integer value' do
     config = Study::Config.build do
@@ -49,3 +50,4 @@ RSpec.describe Study do
     expect { config.val }.to raise_error NoMethodError
   end
 end
+# rubocop:enable Metrics/BlockLength
