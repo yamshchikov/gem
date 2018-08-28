@@ -3,15 +3,19 @@ RSpec.describe Study do
   it 'receives integer value' do
     config = Study::Config.build do 
       value 1
+      new_val 2
     end
     expect(config.value).to eq(1)
+    expect(config.new_val).to eq(2)
   end
 
   it 'receives string value' do
     config = Study::Config.build do 
       value '1'
+      new_val 'asdf'
     end
     expect(config.value).to eq('1')
+    expect(config.new_val).to eq('asdf')
   end
 
   it 'receives tree' do
@@ -43,6 +47,6 @@ RSpec.describe Study do
     config = Study::Config.build do 
       value 313
     end
-    expect(config.val).to raise_error(NoMethodError)
+    expect{config.val}.to raise_error NoMethodError
   end
 end
